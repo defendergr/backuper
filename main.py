@@ -25,7 +25,6 @@ class MainWindow():
                           )
         ui_file_name = "form.ui"
         ui_file = QFile(ui_file_name)
-
         loader = QUiLoader()
         window = loader.load(ui_file)
         ui_file.close()
@@ -36,6 +35,7 @@ class MainWindow():
         # window title
         window.setWindowTitle('Backuper έκδοση 1.2.0')
 
+        # window icon
         window.setWindowIcon(QIcon('dimos.ico'))
 
         # # this will hide the title bar
@@ -47,7 +47,6 @@ class MainWindow():
             self.config.read(self.paths)
             self.source_path = self.config.get('DEFAULT', 'source')
             self.target_path = self.config.get('DEFAULT', 'target')
-
 
         window.SourceButton.clicked.connect(lambda: self.fileBrowser('source'))
         window.TargetButton.clicked.connect(lambda: self.fileBrowser('target'))
@@ -61,14 +60,9 @@ class MainWindow():
 
         window.StartButton.clicked.connect(self.sync)
 
-
-
         window.InfoButton.clicked.connect(self.about)
 
         window.show()
-
-
-
         app.exec()
 
     def fileBrowser(self, pos):
@@ -89,19 +83,17 @@ class MainWindow():
             self.config.write(configfile)
         self.paths = 'options.cfg'
 
-
     def sync(self):
         paths = 'options.cfg'
         if os.path.isfile(paths):
-
             config = configparser.ConfigParser()
             config.read(paths)
             source_path = config.get('DEFAULT','source')
             target_path = config.get('DEFAULT','target')
+
             option = 'sync'
 
             sync(r'{}'.format(source_path), r'{}'.format(target_path), option, verbose=True, purge=True) #for syncing one way + purge
-
         else:
             print(f'Δεν βρέθηκε το {paths}')
 
@@ -114,7 +106,6 @@ class MainWindow():
         msgBox.setWindowIcon(QIcon('dimos.ico'))
         msgBox.setText("Backuper έκδοση 1.2.0 \nΓια τον Δήμο Θέρμης \nΚωνσταντίνος Καρακασίδης")
         msgBox.exec()
-
 
 
 if __name__=="__main__":
