@@ -1,9 +1,8 @@
 ('C:\\Users\\k.karakasidis\\PycharmProjects\\Backuper\\build\\main\\main.exe',
- True,
+ False,
  False,
  True,
- 'C:\\Program '
- 'Files\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\images\\icon-console.ico',
+ ['C:\\Users\\k.karakasidis\\PycharmProjects\\Backuper\\dimos.ico'],
  None,
  False,
  False,
@@ -41,6 +40,10 @@
    'C:\\Program '
    'Files\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
+  ('pyi_rth_pyside6',
+   'C:\\Program '
+   'Files\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyside6.py',
+   'PYSOURCE'),
   ('pyi_rth_subprocess',
    'C:\\Program '
    'Files\\Python311\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_subprocess.py',
@@ -51,8 +54,8 @@
  [],
  False,
  False,
- 1669203225,
- [('run.exe',
+ 1669707729,
+ [('runw.exe',
    'C:\\Program '
-   'Files\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
+   'Files\\Python311\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\runw.exe',
    'EXECUTABLE')])

@@ -1,1 +1,1 @@
-pyinstaller main.py
+pyinstaller --windowed --icon=dimos.ico main.py
