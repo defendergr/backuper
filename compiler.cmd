@@ -1,1 +1,1 @@
-pyinstaller --windowed --icon=dimos.ico main.py
+pyinstaller --windowed --icon=dimos.ico backuper.py

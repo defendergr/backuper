@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>647</width>
-    <height>470</height>
+    <width>652</width>
+    <height>261</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -139,7 +145,7 @@
      <x>10</x>
      <y>160</y>
      <width>631</width>
-     <height>291</height>
+     <height>91</height>
     </rect>
    </property>
   </widget>
