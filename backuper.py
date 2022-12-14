@@ -1,4 +1,4 @@
-#Backuper έκδοση 1.5.3 Κωνσταντίνος Καρακασίδης
+#Backuper έκδοση 1.6.1 Κωνσταντίνος Καρακασίδης
 
 import configparser
 import os
@@ -11,7 +11,7 @@ from PySide6.QtWidgets import QApplication, QFileDialog, QMessageBox
 from PySide6.QtGui import QIcon
 
 
-
+ver = "1.6.1"
 class MainWindow():
 
     def __init__(self):
@@ -38,7 +38,7 @@ class MainWindow():
         # window.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint)
 
         # window title
-        window.setWindowTitle('Backuper έκδοση 1.5.3')
+        window.setWindowTitle(f'Backuper έκδοση {ver}')
 
         # window icon
         window.setWindowIcon(QIcon('dimos.ico'))
@@ -73,11 +73,24 @@ class MainWindow():
         self.startButton = window.StartButton
         self.startButton.clicked.connect(self.start)
 
-        # self.process.started(lambda: self.startButton.setEnabled(False))
-        # self.process.finished(lambda: self.startButton.setEnabled(True))
-
 
         window.InfoButton.clicked.connect(self.about)
+        try:
+            options = ['-h', '-H', '-s', '-S']
+            sync = ['-s', '-S']
+            h = ['-h', '-H']
+            if sys.argv[1] not in options:
+                print("-h for Help")
+                sys.exit()
+            if sys.argv[1] in h:
+                print('-h for Help \n-s for auto Sync')
+                sys.exit()
+            if sys.argv[1] in sync:
+                self.start()
+        except IndexError:
+            pass
+
+
 
         window.show()
         app.exec()
@@ -117,7 +130,7 @@ class MainWindow():
         msgBox = QMessageBox()
         msgBox.setWindowTitle('About')
         msgBox.setWindowIcon(QIcon('dimos.ico'))
-        msgBox.setText("Backuper έκδοση 1.2.0 \nΓια τον Δήμο Θέρμης \nΑπό: Κωνσταντίνος Καρακασίδης")
+        msgBox.setText(f"Backuper έκδοση {ver} \nΓια τον Δήμο Θέρμης \nΑπό: Κωνσταντίνος Καρακασίδης")
         msgBox.exec()
 
     def out(self, text):
